@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logging Out...</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .message {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .redirect-link {
+            font-size: 16px;
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        setTimeout(function() {
+            window.location.href = "index.html";
+        }, 2000);
+    </script>
+</head>
+<body>
+    <div class="header">FinSight</div>
+    <div class="container">
+        <p class="message">You have been logged out. Redirecting to the homepage...</p>
+        <p>If you are not redirected automatically, <a class="redirect-link" href="index.html">click here</a>.</p>
+    </div>
+</body>
+</html>

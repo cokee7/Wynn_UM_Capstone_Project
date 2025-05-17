@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>FinSight Dashboard Chatbot</title>
+
+  <!-- Load Marked for Markdown rendering -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+  <style>
+    /* Base layout */
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f4f7fa;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header {
+      background: #0A2540;
+      color: #fff;
+      padding: 1rem 2rem;
+      text-align: center;
+    }
+    header h1 { margin: 0; font-size: 1.75rem; }
+    header h2 {
+      margin: 0.25rem 0 0;
+      font-size: 1rem;
+      font-weight: 400;
+      opacity: 0.8;
+    }
+
+    /* Chat container */
+    #chat-container {
+      /* Fixed height: adjust as you like */
+      height: 750px;
+      max-width: 700px;
+      width: 100%;
+      margin: 2rem auto;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* Messages pane */
+    #messages {
+      /* Fill available space above the form */
+      flex: 1;
+      padding: 1rem;
+      overflow-y: auto;
+      /* Optional: always show scrollbar */
+      scrollbar-width: thin;
+    }
+    .message {
+      margin-bottom: 1rem;
+      line-height: 1.4;
+    }
+    .message .author {
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+      display: block;
+    }
+    .message p { margin: 0.25rem 0; }
+    .msg-user .author  { color: #0A74DA; }
+    .msg-bot  .author  { color: #27ae60; }
+    .msg-error .author { color: #e74c3c; }
+
+    /* Input form */
+    form#chat-form {
+      display: flex;
+      border-top: 1px solid #e1e4e8;
+    }
+    #msg-input {
+      flex: 1;
+      border: none;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+    }
+    #msg-input:focus { outline: none; }
+    #send-btn {
+      background: #0A2540;
+      color: #fff;
+      border: none;
+      padding: 0 1.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    #send-btn:hover { background: #052138; }
+
+    /* Markdown styling */
+    .markdown-content ul {
+      margin: 0.5rem 0 0.5rem 1.5rem;
+    }
+    .markdown-content strong { font-weight: 600; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Your AI‑driven assistant</h1>
+  </header>
+
+  <div id="chat-container">
+    <div id="messages"></div>
+    <form id="chat-form">
+      <input
+        type="text"
+        id="msg-input"
+        autocomplete="off"
+        placeholder="Type your question here…"
+      />
+      <button type="submit" id="send-btn">Send</button>
+    </form>
+  </div>
+
+  <!-- Include the chat UI script -->
+  <script src="chatbot_ui.js"></script>
+</body>
+</html>

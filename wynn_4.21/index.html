@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FinSight – Intelligent Financial Insights</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Modern Font & Base Styling */
+        body {
+            font-family: 'Inter', "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            color: #333; /* Standard dark text */
+            background-color: #FFFFFF; /* Default white background */
+            position: relative;
+            overflow-x: hidden;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* --- HERO SECTION --- */
+        #hero {
+            position: relative;
+            height: 90vh; /* Adjust height as needed */
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
+            overflow: hidden; /* Ensure video doesn't overflow */
+        }
+
+        #hero-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: 0;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+        }
+
+        #hero::before { /* Dark overlay for text contrast */
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 37, 64, 0.7); /* Dark blue overlay */
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem; /* Larger hero title */
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero-content p.subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            color: rgba(255, 255, 255, 0.85);
+            font-weight: 400;
+        }
+
+        .hero-buttons a {
+            text-decoration: none;
+            padding: 1rem 2.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 1rem;
+            margin: 0 0.5rem;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+            display: inline-block;
+            border: 2px solid transparent;
+        }
+
+        .hero-buttons a.btn-primary {
+            background-color: #007bff; /* Professional Blue */
+            color: #fff;
+            border-color: #007bff;
+        }
+
+        .hero-buttons a.btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        .hero-buttons a.btn-secondary {
+            background-color: transparent;
+            color: #fff;
+            border-color: #fff;
+        }
+
+        .hero-buttons a.btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Admin Login Link (less prominent) */
+         .admin-login-link {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 3;
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+         }
+         .admin-login-link:hover {
+            color: #fff;
+         }
+
+
+        /* --- MAIN CONTENT & SECTIONS --- */
+        main {
+            position: relative;
+            z-index: 1; /* Keep main content above potential sticky elements if added later */
+            background-color: #fff; /* Ensure main has white background */
+        }
+
+        .container {
+            max-width: 1140px; /* Standard container width */
+            margin: 0 auto;
+            padding: 0 1rem; /* Horizontal padding */
+        }
+
+        section {
+            padding: 6rem 0; /* Generous vertical padding */
+            text-align: center;
+        }
+
+         /* Alternating Backgrounds for Sections */
+        section:nth-of-type(odd) {
+             background-color: #FFFFFF;
+         }
+        section:nth-of-type(even) {
+             background-color: #F8F9FA; /* Subtle light gray */
+         }
+
+        section h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #0A2540; /* Dark Blue for headings */
+            margin-bottom: 1.5rem;
+        }
+
+        section p.section-subtitle {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto 3rem auto; /* Centered subtitle */
+        }
+
+        /* --- VALUE PROPOSITION SECTION --- */
+        #value-prop {
+             padding: 4rem 0; /* Less padding for this smaller section */
+        }
+
+        .value-points {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .value-point {
+            flex: 1;
+            min-width: 250px; /* Prevent excessive squishing */
+            max-width: 300px;
+            text-align: center;
+        }
+
+        .value-point i {
+            font-size: 2.5rem;
+            color: #007bff; /* Use primary blue for icons */
+            margin-bottom: 1rem;
+        }
+
+        .value-point h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #0A2540;
+            margin-bottom: 0.5rem;
+        }
+
+        .value-point p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+
+        /* --- FEATURES SECTION (Using Cards) --- */
+        #features .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+            gap: 2.5rem;
+            margin-top: 3rem;
+            text-align: left;
+        }
+
+        .feature-card {
+            background-color: #FFFFFF;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #E9ECEF; /* Subtle border */
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .feature-card i {
+            font-size: 2rem;
+            color: #007bff; /* Primary blue */
+            margin-bottom: 1.5rem;
+            display: block; /* Make icon block for margin */
+            text-align: center;
+        }
+
+         .feature-card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #0A2540; /* Dark Blue */
+            margin-bottom: 0.75rem;
+            text-align: center;
+         }
+
+        .feature-card p {
+            font-size: 1rem;
+            color: #444;
+            line-height: 1.6;
+             text-align: center;
+        }
+
+
+        /* --- DEMO VIDEO SECTION --- */
+        #demo {
+            background-color: #0A2540; /* Dark background for contrast */
+            color: #fff;
+        }
+        #demo h2 {
+            color: #fff;
+        }
+        #demo p.section-subtitle {
+             color: rgba(255, 255, 255, 0.8);
+        }
+
+        .demo-video-wrapper {
+             margin-top: 3rem;
+        }
+
+        .demo-video-wrapper video {
+            display: block;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            border-radius: 8px;
+            border: 3px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* --- CALL TO ACTION SECTION --- */
+        #cta {
+             background-color: #F8F9FA; /* Light gray */
+             border-top: 1px solid #E9ECEF;
+        }
+
+        #cta h2 {
+            margin-bottom: 1rem;
+        }
+
+        #cta p {
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+         #cta a.btn-primary {
+            text-decoration: none;
+            padding: 1rem 2.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+            display: inline-block;
+            background-color: #007bff;
+            color: #fff;
+            border: 2px solid #007bff;
+        }
+        #cta a.btn-primary:hover {
+             background-color: #0056b3;
+             border-color: #0056b3;
+             transform: translateY(-2px);
+         }
+
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #0A2540; /* Consistent dark blue */
+            color: #ADB5BD; /* Lighter gray for footer text */
+            padding: 4rem 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .footer-container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-links {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links a {
+            color: #CED4DA;
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #fff;
+        }
+
+        .footer-copyright {
+            margin-top: 1rem; /* Space above copyright */
+             border-top: 1px solid rgba(255, 255, 255, 0.1);
+             padding-top: 1.5rem;
+             width: 100%;
+        }
+
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            .hero-content p.subtitle {
+                font-size: 1.1rem;
+            }
+            section {
+                 padding: 4rem 0;
+             }
+             section h2 {
+                 font-size: 2rem;
+             }
+            .value-points {
+                 flex-direction: column;
+                 align-items: center;
+             }
+            #features .feature-grid {
+                 grid-template-columns: 1fr; /* Stack cards on smaller screens */
+             }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Background Video (Hero Only) -->
+    <section id="hero">
+        <video autoplay muted loop playsinline id="hero-video" poster="images/hero-poster.jpg">
+            <!-- Use a relevant poster image -->
+            <source src="background.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-content">
+            <h1>Unlock Financial Clarity with FinSight</h1>
+            <p class="subtitle">Navigate market trends, analyze sentiment, and make data-driven decisions with confidence using our powerful analytics platform.</p>
+            <div class="hero-buttons">
+                <a href="register.php" class="btn-primary">Get Started Free</a>
+                <a href="login.php" class="btn-secondary">Login</a>
+            </div>
+        </div>
+         <!-- Admin Login Link -->
+         <a href="admin_login.php" class="admin-login-link">Admin Portal</a>
+    </section>
+
+    <main>
+        <!-- Value Proposition Section -->
+        <section id="value-prop">
+            <div class="container">
+                 <!-- Optional: Add a subtle heading like <h2>Why FinSight?</h2> -->
+                <div class="value-points">
+                    <div class="value-point">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Real-time Insights</h3>
+                        <p>Stay ahead with up-to-the-minute tracking of financial news and trending topics.</p>
+                    </div>
+                    <div class="value-point">
+                        <i class="fas fa-brain"></i>
+                        <h3>Intelligent Analysis</h3>
+                        <p>Leverage powerful sentiment analysis and keyword tracking to understand market mood.</p>
+                    </div>
+                    <div class="value-point">
+                        <i class="fas fa-cogs"></i>
+                        <h3>Customizable & Focused</h3>
+                        <p>Tailor your dashboards and alerts to focus only on what matters most to you.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Features Section -->
+        <section id="features">
+            <div class="container">
+                <h2>Empowering Your Financial Strategy</h2>
+                <p class="section-subtitle">Discover the tools designed to enhance your market understanding and decision-making process.</p>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <h3>Data-Driven Dashboards</h3>
+                        <p>Visualize complex data effortlessly with intuitive and interactive dashboards.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-search"></i>
+                        <h3>Keyword Interest Tracking</h3>
+                        <p>Monitor the buzz around specific stocks, sectors, or topics relevant to you.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-smile-beam"></i> <!-- Or fa-meh, fa-frown -->
+                        <h3>Topic Sentiment Analysis</h3>
+                        <p>Gauge the market's mood towards key financial topics instantly.</p>
+                    </div>
+                    <div class="feature-card">
+                        <i class="fas fa-newspaper"></i>
+                        <h3>News Aggregation & Summarization</h3>
+                        <p>Access condensed insights from vast amounts of financial news.</p>
+                    </div>
+                     <div class="feature-card">
+                        <i class="fas fa-bell"></i>
+                        <h3>Customizable Alerts</h3>
+                        <p>Set up notifications for significant shifts in trends or sentiment.</p>
+                    </div>
+                     <div class="feature-card">
+                        <i class="fas fa-file-alt"></i>
+                        <h3>Insightful Reports</h3>
+                        <p>Generate comprehensive reports to support your analysis and presentations.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Demo Video Section -->
+        <section id="demo">
+            <div class="container">
+                <h2>See FinSight in Action</h2>
+                <p class="section-subtitle">Watch this short overview to see how FinSight can transform your financial analysis workflow.</p>
+                <div class="demo-video-wrapper">
+                    <video controls poster="images/WechatIMG3410.jpg"> <!-- Ensure poster image path is correct -->
+                        <source src="8435_1745159318.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </section>
+
+         <!-- Call to Action Section -->
+         <section id="cta">
+            <div class="container">
+                <h2>Ready to Gain Your Financial Edge?</h2>
+                <p>Sign up today for a free trial and experience the power of focused financial intelligence.</p>
+                <a href="register.php" class="btn-primary">Start Your Journey Now</a>
+            </div>
+         </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-container">
+
+            <div class="footer-copyright">
+                 © 2025 FinSight Technologies. All rights reserved.
+            </div>
+             <!-- Optional: Add social icons here if needed -->
+             <!-- <div class="social-icons"> -->
+                 <!-- <a href="#"><i class="fab fa-linkedin"></i></a> -->
+                 <!-- <a href="#"><i class="fab fa-twitter"></i></a> -->
+             <!-- </div> -->
+        </div>
+    </footer>
+
+</body>
+</html>

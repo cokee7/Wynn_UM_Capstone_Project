@@ -1,0 +1,25 @@
+# Selenium and related
+selenium
+selenium-stealth
+google-colab-selenium #
+webdriver-manager
+
+# Mistral API
+mistralai
+
+# Topic Modeling
+spacy>=3.0.0 
+# Run: python -m spacy download zh_core_web_sm
+jieba
+scikit-learn
+
+# Utilities
+tqdm
+requests 
+urllib3 
+
+# Database connection
+mysql-connector-python
+
+# Gemini model
+google-generativeai

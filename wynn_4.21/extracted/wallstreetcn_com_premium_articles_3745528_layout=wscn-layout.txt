@@ -1,0 +1,113 @@
+Original URL: https://wallstreetcn.com/premium/articles/3745528?layout=wscn-layout
+--------------------------------------------------
+Content:
+“ 交易桌前看天下，付鹏说来评财经 ”
+《付鹏说·第五季》重磅来袭！
+立即订阅
+—
+Play Video
+Play
+0:00
+Current Time
+0:00
+/
+Duration
+7:23
+1x
+Playback Rate
+2x
+1.5x
+1.25x
+1x
+, selected
+0.75x
+Mute
+Fullscreen
+This is a modal window.
+Beginning of dialog window. Escape will cancel and close the window.
+Text
+Color
+White
+Black
+Red
+Green
+Blue
+Yellow
+Magenta
+Cyan
+Transparency
+Opaque
+Semi-Transparent
+Background
+Color
+Black
+White
+Red
+Green
+Blue
+Yellow
+Magenta
+Cyan
+Transparency
+Opaque
+Semi-Transparent
+Transparent
+Window
+Color
+Black
+White
+Red
+Green
+Blue
+Yellow
+Magenta
+Cyan
+Transparency
+Transparent
+Semi-Transparent
+Opaque
+Font Size
+50%
+75%
+100%
+125%
+150%
+175%
+200%
+300%
+400%
+Text Edge Style
+None
+Raised
+Depressed
+Uniform
+Dropshadow
+Font Family
+Proportional Sans-Serif
+Monospace Sans-Serif
+Proportional Serif
+Monospace Serif
+Casual
+Script
+Small Caps
+Reset
+restore all settings to the default values
+Done
+Close Modal Dialog
+End of dialog window.
+本期内容
+>>本文仅限作者观点，点击上方视频收看！
+洞见财经脉搏，掌握市场未来，这里是付鹏说专栏的课代表洞察君。
+外汇交易市场是全球最大的金融交易市场之一，交易规模巨大。根据国际清算银行（BIS）的数据显示，2022年全球外汇市场的日均交易量就超过了7万亿美元。这一期就先从汇率交易的底层逻辑——跑马游戏开始。
+对于汇率的传统理解，原则上就是在自由流动的资本体系中，两个国家无风险利率的预期差引发的资本跨境流动的结果。在自由流动的情况下，资本流动是受利率驱动的。索罗斯的炼金术里已经写得很清楚了，原则上可以把汇率当成两个利差，当然这里边的利差是指利率预期，因为市场反映的是预期。各经济体的经济情况影响到各经济体央行政策的差异，将决定各国之间的汇率强弱关系。
+所谓跑马游戏，简单的说就是
+汇率的两端就是两匹赛马，汇率的涨跌是由这两匹马的相对速度决定的，要注意汇率比较的是相对速度而不是绝对速度。
+而在疫情前，因为全球化的影响，各经济体经济往往更多呈现你好我好大家好，你坏我坏大家坏的情况。这就好比两匹马往往一同加速、一同减速。导致相对速率拉不开差距，导致汇率市场波动有限。受疫情和逆全球化的影响，这种同好同差的情况有所改变，有些经济体开始出现了差异化表现，从而导致其央行政策也出现了差异化。
+这里引入一个工具OIS, 付鹏总过去就习惯使用OIS去推演汇率市场的变化。隔夜指数掉期是指它是一种将隔夜利率交换成为若干固定利率的利率掉期。它与国债收益率曲线总体上是相符的，只是OIS我们更多的会去观察他的中短端，因为其中长端定价不如债券精准。所以他能很好的帮助我们观察中短端的货币政策预期的反映。
+我们可以通过OIS的期限结构差，来反应市场对于央行下一步行动的定价程度，图中我使用了1Y和3M去作差，如果结果为正值，则意味着市场预期未来的政策利率高于当下，反之亦然。一般我习惯以25bp为分界，+25bp则认为市场对央行半年内下一次加息行动已经定价充分，-25bp则认为央行半年内下一次降息行动已经定价充分，这个模型几乎对于所有央行都适用。那我们进一步推导，把不同货币ois结构差再轧差，则可以得到两种货币之间央行行动的速率差。
+从这个图上不能看到，整体上来说两个货币的OIS结构差再做差与对应汇率是有指导价值的。有时候我们会发现行情与红线劈叉，这时我们就需要从引入更多的方法去分析造成的原因，如果是汇率市场的定价偏误，那往往是较好的介入点。比如2023年Q2的欧元。
+同时OIS结构模型也有其弊端，因为分析OIS的结构差本质上是在分析收益率曲线的前端，无法顾及收益率曲线的中长端。这就会导致比如各个央行都在保持原有的货币政策时，OIS变动就不太明显，但各国之间收益率曲线中长端可能已经发生变化。
+目前来看，加元的贬值压力相当大，并且已经走出破位行情；类似的澳元尽管至今尚未开始降息，但已经处于预期转差，即将开始降息的阶段；而美元目前降息预期大幅收敛，会继续保持强势。不过请记住OIS只是我们设计汇率交易策略里的一环，其他部分我会在后续的视频里一一讲解。
+我是付鹏说专栏的课代表洞察君，希望本期视频能够帮到大家。我们下期再见。
+风险提示及免责条款
+市场有风险，投资需谨慎。本文不构成个人投资建议，也未考虑到个别用户特殊的投资目标、财务状况或需要。用户应考虑本文中的任何意见、观点或结论是否符合其特定状况。据此投资，责任自负。

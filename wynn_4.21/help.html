@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinSight – Help Center</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Modern Font & Base Styling */
+        body {
+            font-family: 'Inter', "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            color: #333; 
+            background-color: #f8f9fa;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Header */
+        header {
+            background-color: #0A2540;
+            color: #fff;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+            margin-top: 0.8rem;
+        }
+
+        nav a {
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.3rem 0.8rem;
+            border-radius: 6px;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+        }
+
+        nav a:hover {
+            color: #fff;
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Main container */
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        /* Help page specific styles */
+        .help-layout {
+            display: flex;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        /* Sidebar */
+        .help-sidebar {
+            flex: 0 0 250px;
+        }
+
+        .help-sidebar h2 {
+            color: #0A2540;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            font-size: 1.5rem;
+        }
+
+        .help-sidebar ul {
+            list-style: none;
+        }
+
+        .help-sidebar li {
+            margin-bottom: 0.5rem;
+        }
+
+        .help-sidebar a {
+            display: block;
+            padding: 0.5rem 1rem;
+            color: #555;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background-color 0.3s, color 0.3s;
+            font-weight: 500;
+        }
+
+        .help-sidebar a:hover, 
+        .help-sidebar a.active {
+            background-color: #f0f4f8;
+            color: #007bff;
+        }
+
+        /* Main content */
+        .help-content {
+            flex: 1;
+        }
+
+        .help-content h2 {
+            color: #0A2540;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            font-size: 2rem;
+        }
+
+        .help-section {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #E9ECEF;
+        }
+
+        .help-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .help-section h3 {
+            color: #0A2540;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            font-size: 1.5rem;
+        }
+
+        .help-section p {
+            margin-bottom: 1rem;
+        }
+
+        .help-section ul, 
+        .help-section ol {
+            margin-bottom: 1rem;
+            margin-left: 1.5rem;
+        }
+
+        .help-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight-box {
+            background-color: #f0f4f8;
+            border-left: 4px solid #007bff;
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin: 1.5rem 0;
+        }
+
+        .info-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid #E9ECEF;
+            transition: transform 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .info-card h4 {
+            color: #0A2540;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0A2540;
+            color: #ADB5BD;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 3rem;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .help-layout {
+                flex-direction: column;
+            }
+            
+            .help-sidebar {
+                flex: none;
+                width: 100%;
+                margin-bottom: 2rem;
+            }
+            
+            .help-sidebar ul {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+            
+            .help-sidebar li {
+                margin-bottom: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>FinSight Help Center</h1>
+        <nav>
+            <a href="dashboard.php">Dashboard</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="help-layout">
+            <aside class="help-sidebar">
+                <h2>Help Topics</h2>
+                <ul>
+                    <li><a href="#getting-started" class="active">Getting Started</a></li>
+                    <li><a href="#dashboard">Dashboard Features</a></li>
+                    <li><a href="#reports">Reports</a></li>
+                    <li><a href="#customization">Customization</a></li>
+                    <li><a href="#account">Account Management</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </aside>
+
+            <main class="help-content">
+                <h2>FinSight Help Documentation</h2>
+                
+                <section id="getting-started" class="help-section">
+                    <h3>Getting Started with FinSight</h3>
+                    <p>Welcome to FinSight, your intelligent financial insights platform. This guide will help you get up and running quickly with our platform.</p>
+                    
+                    <div class="highlight-box">
+                        <h4>Quick Start</h4>
+                        <ol>
+                            <li>Create your account by registering with your email</li>
+                            <li>Login to access your personalized dashboard</li>
+                            <li>Explore the trending topics and insights</li>
+                            <li>Customize your dashboard according to your preferences</li>
+                        </ol>
+                    </div>
+                    
+                    <p>FinSight continuously scans financial news sources to provide you with the most relevant and timely information. Our advanced algorithms analyze sentiment and trends to help you make informed decisions.</p>
+                    
+                    <div class="info-card">
+                        <h4>Need Help?</h4>
+                        <p>If you're having trouble getting started, feel free to contact our support team at support@finsight.com</p>
+                    </div>
+                </section>
+                
+                <section id="dashboard" class="help-section">
+                    <h3>Understanding Your Dashboard</h3>
+                    <p>Your FinSight dashboard is the command center for all your financial insights. Here's how to make the most of it:</p>
+                    
+                    <ul>
+                        <li><strong>Top Stats:</strong> Quick overview of trending topics, sentiment scores, and activity metrics</li>
+                        <li><strong>Trend Charts:</strong> Visual representation of key financial topics and their performance over time</li>
+                        <li><strong>Sentiment Analysis:</strong> Gauge market sentiment for specific sectors or companies</li>
+                        <li><strong>News Feed:</strong> Latest relevant news articles with sentiment indicators</li>
+                    </ul>
+                    
+                    <p>The dashboard refreshes data automatically, but you can also manually refresh by clicking the "Refresh Data" button in the top right corner.</p>
+                </section>
+                
+                <section id="reports" class="help-section">
+                    <h3>Generating and Using Reports</h3>
+                    <p>FinSight allows you to generate detailed reports for deeper analysis:</p>
+                    
+                    <ol>
+                        <li>Navigate to the "Generate Report" page from the main navigation</li>
+                        <li>Select the topics and time period you're interested in</li>
+                        <li>Choose the type of analysis you need (trend analysis, sentiment breakdown, etc.)</li>
+                        <li>Click "Generate" to create your report</li>
+                        <li>Download or share your report as needed</li>
+                    </ol>
+                    
+                    <div class="info-card">
+                        <h4>Pro Tip</h4>
+                        <p>Schedule recurring reports to be delivered to your email for consistent monitoring of key topics.</p>
+                    </div>
+                </section>
+                
+                <section id="customization" class="help-section">
+                    <h3>Customizing Your Experience</h3>
+                    <p>Make FinSight work for your specific needs by customizing these elements:</p>
+                    
+                    <ul>
+                        <li><strong>Dashboard Layout:</strong> Arrange widgets according to your preference</li>
+                        <li><strong>Focus Topics:</strong> Select specific financial topics or companies to track</li>
+                        <li><strong>Alert Settings:</strong> Define thresholds for notifications</li>
+                        <li><strong>Data Visualization:</strong> Choose your preferred chart types and color schemes</li>
+                    </ul>
+                    
+                    <p>All customizations are automatically saved to your profile and will be applied each time you log in.</p>
+                </section>
+
+                <section id="account" class="help-section">
+                    <h3>Managing Your FinSight Account</h3>
+                    <p>Keep your account details up-to-date and secure. Here's how to manage your profile and settings:</p>
+
+                    <ul>
+                        <li>
+                            <strong>Updating Profile Information:</strong> Navigate to your "Profile" or "Settings" page (usually accessible from the top-right user menu). Here you can update your name, email address, and other personal details. Remember to save your changes.
+                        </li>
+                        <li>
+                            <strong>Changing Your Password:</strong> For security reasons, it's good practice to change your password periodically. Go to the "Security" or "Change Password" section in your account settings. You'll typically need to enter your current password and then your new password twice.
+                        </li>
+
+                    </ul>
+
+                    <!-- Using info-card structure consistent with other sections -->
+                    <div class="info-card">
+                        <h4>Account Security Tips</h4>
+                        <!-- Nested list inside info-card -->
+                        <ul>
+                            <li>Use a strong, unique password for your FinSight account.</li>
+                            <li>Do not share your login credentials with anyone.</li>
+                            <li>Be cautious of phishing emails asking for your login details.</li>
+                            <li>Log out of your account when using shared computers.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section id="faq" class="help-section">
+                    <h3>Frequently Asked Questions (FAQ)</h3>
+                    <p>Here are answers to some common questions about using FinSight:</p>
+
+                    <!-- Using simple divs with h4 and p for Q&A pairs, consistent with basic content flow -->
+
+                    <div>
+                        <h4>How often is the dashboard data updated?</h4>
+                        <p>The core data on your dashboard, such as trending topics and sentiment scores, is typically updated in near real-time or every few minutes to provide you with the most current insights. Some historical chart data might update less frequently (e.g., daily).</p>
+                    </div>
+
+
+                    <div>
+                        <h4>I forgot my password. How can I reset it?</h4>
+                        <p>Click on the "Forgot Password?" link on the login page. You will be prompted to enter your registered email address, and we will send you instructions on how to reset your password.</p>
+                    </div>
+
+                    <div>
+                        <h4>Can I export data or reports from FinSight?</h4>
+                        <p>Yes, the "Reports" section allows you to generate detailed analyses which can usually be downloaded in common formats like PDF for offline use or sharing.</p>
+                    </div>
+
+                    <!-- Using info-card structure consistent with other sections -->
+                    <div class="info-card">
+                        <h4>Still Have Questions?</h4>
+                        <p>If your question isn't answered here, please don't hesitate to contact our support team at support@finsight.com or use the contact form on our website. We're happy to help!</p>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-copyright">
+            © 2025 FinSight Technologies. All rights reserved.
+        </div>
+    </footer>
+</body>
+</html>
